@@ -13,7 +13,12 @@ function App() {
   const [currentEdit,setCurrentEdit]=useState("");
   const [currentEditedItem,setCurrentEditedItem]=useState("");
 
-  function handleAddBtn(){
+  function handleAddBtn(e){
+    e.preventDefault();
+    if(!newTitle || !newDescription){
+      alert("please enter valid title and description")
+      return;
+    }
     let newTodoItem={
       title:newTitle,
       description:newDescription
